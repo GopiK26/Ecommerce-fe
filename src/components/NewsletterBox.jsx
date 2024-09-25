@@ -1,23 +1,33 @@
 import React from 'react'
+import { assets } from '../assets/assets'
 
-const NewsletterBox = () => {
-
-    const onSubmitHandler = (event) => {
-        event.preventDefault();
-    }
-
+const Hero = () => {
   return (
-    <div className=' text-center'>
-      <p className='text-2xl font-medium text-gray-800'>Subscribe now & get 20% off</p>
-      <p className='text-gray-400 mt-3'>
-      Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-      </p>
-      <form onSubmit={onSubmitHandler} className='w-full sm:w-1/2 flex items-center gap-3 mx-auto my-6 border pl-3'>
-        <input className='w-full sm:flex-1 outline-none' type="email" placeholder='Enter your email' required/>
-        <button type='submit' className='bg-black text-white text-xs px-10 py-4'>SUBSCRIBE</button>
-      </form>
+    <div className='flex flex-col sm:flex-row border border-gray-700 bg-[#121212] border border-white rounded-b-2xl'>
+      {/* Hero Left Side */}
+      <div className='w-full sm:w-1/2 flex items-center justify-center py-16 sm:py-0 px-8'>
+        <div className='text-gray-200 max-w-md'>
+          <div className='flex items-center gap-3 mb-4'>
+            <p className='w-12 h-[2px] bg-gray-200'></p>
+            <p className='font-medium text-sm md:text-base tracking-wider'>OUR BESTSELLERS</p>
+          </div>
+          <h1 className='prata-regular text-4xl sm:text-5xl lg:text-6xl leading-tight mb-6 text-white'>Latest Arrivals</h1>
+          <div className='flex items-center gap-3 hover:gap-5 transition-all duration-300 cursor-pointer group'>
+            <p className='font-semibold text-sm md:text-base tracking-wider'>SHOP NOW</p>
+            <p className='w-12 h-[1px] bg-gray-200 group-hover:w-16 transition-all duration-300'></p>
+          </div>
+        </div>
+      </div>
+      {/* Hero Right Side */}
+      <div className='w-full sm:w-1/2 overflow-hidden'>
+        <img 
+          className='w-full h-full object-cover transition-transform duration-700 hover:scale-110 rounded-2xl' 
+          src={assets.hero_img} 
+          alt="Latest Arrivals" 
+        />
+      </div>
     </div>
   )
 }
 
-export default NewsletterBox
+export default Hero
